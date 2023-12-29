@@ -22,7 +22,7 @@ $ kubectl version --client
 ```
 # Minikube Installation
 
-** Execute Below Command to download minikube binary **
+**Execute Below Command to download minikube binary**
 ```
 $ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 ```
@@ -31,4 +31,10 @@ $ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linu
 $ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 ```
 
-Now Just Execute  ``` Minikube start ``` to start minikube and  ``` kubectl cluster-info ``` to view k8s cluster. 
+Now Just Execute  ``` Minikube start ``` to start minikube and  ``` kubectl cluster-info ``` to view k8s cluster.
+
+**If you are getting preflight error due to Less CPU count than execute below to set CPUS 1**
+```
+minikube start --extra-config=kubeadm.ignore-preflight-errors=NumCPU --force --cpus=1
+```
+or if you are using docker desktop and getting above error than increse CPU in docker desktop
